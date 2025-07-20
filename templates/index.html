@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Resume Evaluator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <i class="fas fa-robot app-icon"></i>
+            <h1> AI Resume Evaluator</h1>
+            <p>Empowering recruiters with intelligent candidate assessment.</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h2><span class="handshake-emoji">Hi I'm Balachandharsriram!👋</span></h2>
+                <p>Instantly analyze resumes with cutting-edge AI for optimal fit and efficiency.</p>
+                <a href="#evaluation-form" class="scroll-down-btn"><i class="fas fa-chevron-down"></i> Get Started</a>
+            </div>
+            <div class="hero-image">
+                <img src="static/images/ResumeEvaluator.png"alt="AI powered recruitment illustration">
+            </div>
+        </section>
+
+        <section id="evaluation-form" class="evaluation-section">
+            <div class="container">
+                <div class="input-section card">
+                    <h2><i class="fas fa-file-alt icon-left"></i> Paste Resume</h2>
+                    <textarea id="resumeInput" placeholder="Paste the candidate's full resume text here.&#10;For example:&#10;Name: John Doe&#10;Skills: Python, Machine Learning, Data Science&#10;Experience: 5 years as AI Engineer&#10;Education: Master's in AI" rows="18"></textarea>
+                    <button id="evaluateButton">
+                        <i class="fas fa-play icon-left"></i> Evaluate Resume
+                    </button>
+                </div>
+
+                <div class="result-section card">
+                    <h2><i class="fas fa-flask icon-left"></i> Evaluation Result</h2>
+                    <div id="loading" class="loading-dots hidden">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div id="result-box">
+                        <p id="message">Your AI-powered evaluation will be displayed here. Paste a resume on the left and click 'Evaluate Resume' to begin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 AI Resume Evaluator. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/balachandharsriram/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/offx_Sriram" aria-label="Twitter"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://github.com/Balachandharsriram" aria-label="GitHub"><i class="fab fa-github-square"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+/* Import Google Fonts & Font Awesome (redundant if linked in HTML, but good for self-contained CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap');
+/* Assuming Font Awesome is linked in HTML now */
+
+:root {
+    /* Color Palette - Deep Blue & Teal */
+    --primary-color: #007bff; /* Vibrant Blue */
+    --primary-dark: #0056b3;  /* Darker Blue */
+    --primary-light: #66b2ff; /* Lighter Blue */
+    --accent-color: #00bcd4;  /* Teal for accents */
+    --accent-dark: #00838f;   /* Darker Teal */
+
+    --background-start: #e0f7fa; /* Very Light Cyan */
+    --background-end: #e3f2fd;   /* Very Light Blue */
+
+    --text-dark: #212529;    /* Dark Black-ish */
+    --text-light: #ffffff;
+    --text-secondary: #495057; /* Medium Grey */
+
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-strong: rgba(0, 0, 0, 0.25);
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 15px;
+    --spacing-md: 25px;
+    --spacing-lg: 40px;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-dark);
+}
+
+/* Header Styling */
+.app-header {
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    color: var(--text-light);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow-strong);
+    position: relative;
+    z-index: 100; /* Ensure header is on top */
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.app-icon {
+    font-size: 3.5em;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-light);
+    animation: bounceIn 1s ease-out;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 3.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.header-content p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    opacity: 0.95;
+    color: var(--text-light);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    gap: var(--spacing-lg);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.hero-text h2 {
+    font-size: 2.8em;
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite alternate; /* Subtle floating effect */
+}
+
+.scroll-down-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.scroll-down-btn:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.scroll-down-btn i {
+    margin-right: var(--spacing-xs);
+}
+
+/* Main Content Layout */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /* Allows hero and evaluation section to stack */
+    padding: 0 var(--spacing-md); /* Add horizontal padding to main content */
+}
+
+.evaluation-section {
+    padding-bottom: var(--spacing-lg);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: stretch; /* Make cards stretch to same height */
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    flex: 1;
+    min-width: 450px; /* Increased min-width for larger cards */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Subtle hover effect for cards */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+
+h2 {
+    color: var(--primary-dark);
+    font-size: 2em;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    border-bottom: 3px solid var(--primary-light);
+    padding-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+}
+
+.icon-left {
+    margin-right: var(--spacing-xs);
+    color: var(--accent-color);
+}
+
+textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.05em;
+    resize: vertical;
+    min-height: 350px; /* Increased height */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05), 0 0 12px rgba(0, 123, 255, 0.4); /* Blue focus glow */
+    outline: none;
+}
+
+button {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--text-light);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: 600;
+    transition: all 0.3s ease; /* All properties for smooth animation */
+    box-shadow: 0 6px 15px var(--shadow-medium);
+    align-self: flex-end;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow-strong);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px var(--shadow-light);
+    background: var(--primary-dark); /* Deeper color on click */
+}
+
+/* Result Box Styling */
+#result-box {
+    background-color: var(--background-start);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    flex-grow: 1;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#message {
+    margin: 0;
+}
+
+/* Loading Dots Animation */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Give it space */
+}
+
+.loading-dots span {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: var(--primary-color); /* Use primary color for dots */
+    border-radius: 50%;
+    opacity: 0;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+.loading-dots span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); opacity: 0; }
+    40% { transform: scale(1); opacity: 1; }
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: var(--spacing-md); /* Place at bottom */
+    right: var(--spacing-md); /* Place at right */
+    z-index: 99; /* Ensure it's above other content */
+    border: none;
+    outline: none;
+    background-color: var(--accent-color); /* Use accent color for button */
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-strong);
+}
+
+/* Footer Styling */
+.app-footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    font-size: 0.9em;
+    margin-top: var(--spacing-lg);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0 0 var(--spacing-xs) 0;
+    color: var(--text-secondary); /* Make copyright text slightly lighter */
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5em;
+    margin: 0 var(--spacing-xs);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-section, .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text, .hero-image {
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 80%; /* Smaller image on tablets */
+    }
+
+    .input-section, .result-section, .card {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .app-header h1 {
+        font-size: 2.5em;
+    }
+
+    .app-header p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .app-header h1 {
+        font-size: 2em;
+    }
+    .app-header p {
+        font-size: 0.9em;
+    }
+
+    .hero-text h2 {
+        font-size: 2.2em;
+    }
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .card {
+        padding: var(--spacing-md);
+    }
+
+    textarea {
+        min-height: 280px;
+    }
+
+    #result-box {
+        min-height: 280px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 1em;
+        width: 100%; /* Make button full width on small screens */
+    }
+
+    .footer-content {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .social-links a {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-header {
+        padding: var(--spacing-md) 0;
+    }
+    .app-header h1 {
+        font-size: 1.8em;
+    }
+    .app-icon {
+        font-size: 3em;
+    }
+
+    .hero-section {
+        margin: var(--spacing-md) auto;
+        padding: var(--spacing-md);
+    }
+    .hero-text h2 {
+        font-size: 1.8em;
+    }
+
+    .input-section, .result-section, .card {
+        padding: var(--spacing-sm);
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    textarea, #result-box {
+        min-height: 200px;
+    }
+
+    #scrollToTopBtn {
+        bottom: var(--spacing-sm);
+        right: var(--spacing-sm);
+        padding: 12px;
+        font-size: 1em;
+    }
+}
