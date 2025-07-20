@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Set your Google API Key (ensure this is handled securely in a real app, e.g., environment variables)
 # In a real application, you'd load this from an environment variable:
 # os.getenv("GOOGLE_API_KEY")
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAynMaBN0inSz7rcSeszSUrr7B2yHdJXmw"
+os.environ["GOOGLE_API_KEY"] = "your_api_key"
 
 # Initialize LLM
 llm = ChatLiteLLM(
