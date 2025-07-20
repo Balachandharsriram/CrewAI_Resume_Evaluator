@@ -2,7 +2,8 @@
 
 An AI-powered multi-agent system that evaluates resumes for AI/ML job fit and generates professional candidate response messages — built using **CrewAI**, **LangChain**, and **Gemini LLM**.
 
-![Resume Evaluator UI](https://github.com/Balachandharsriram/CrewAI_Resume_Evaluator/blob/main/static/images/ResumeEvaluator.png)
+![Resume Evaluator UI](https://github.com/Balachandharsriram/CrewAI_Resume_Evaluator/blob/main/static/images/Screenshot%202025-07-20%20062022.png)
+(https://github.com/Balachandharsriram/CrewAI_Resume_Evaluator/blob/main/static/images/Screenshot%202025-07-20%20061938.png)
 
 ---
 
@@ -92,8 +93,7 @@ If you like this project, don’t forget to:
 
 This project is licensed under the MIT License.
 
-```
 ![Resume Evaluator UI](https://github.com/Balachandharsriram/CrewAI_Resume_Evaluator/blob/main/static/images/Screenshot%202025-07-20%20062022.png)
 (https://github.com/Balachandharsriram/CrewAI_Resume_Evaluator/blob/main/static/images/Screenshot%202025-07-20%20061938.png)
 
----
+
